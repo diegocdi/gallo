@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Gallo na Cozinha</title>
-    <link href="./lib/config/config.css" rel="stylesheet">
+    <link href="../lib/config/config.css" rel="stylesheet">
     <style>
         body {
             background-color: #fff;
@@ -24,16 +24,55 @@
             font-weight: bold;
             color:#fff;
         }
+
+        a {
+
+            color: red;
+            font-weight: bold;
+            border:1px solid red;
+            padding: 10px;
+            display: block;
+            width: 200px;
+        }
     </style>
 </head>
 <body>
-    <div style="width: 300px;margin-left:auto;margin-right:auto">
+    <center><h1>Lista de conteúdos da plataforma</h1></center>
+    <ul>
+        <li>SITE INSTITUCIONAL<br/>
+        Aqui coloquei um exemplo já utilizando as cores escuras + laraja nos botões de ação, para ver se vocês gostam dessa paleta de cores.<br/>
+        Essa parte mostra pra que veio, então precisamos aqui de informações básicas, algumas fotos, temos aqui também espaço para qualquer coisa institucional que vocês achem importante colocar
+        <br/>
+        <a href="./institucional">Site institucional</a> <br/>
+    </li>
+    <li>PÁGINAS DE CAPTURAS<br/>
+        Aqui coloquei um exemplo de página de captura, mas aí eu queria saber de vocês o que vocês imaginam que o usuário deve preencher (o mais básico possível) 
+        pra ele se cadastrar na plataforma. Além disso as páginas de captura precisam ter algumas informações (meio enchessão de linguiça) por conta de politicas do face e instagram, principlamente<br/>
+        Aqui coloquei um exemplo, mas podemos ter várias campanhas com várias páginas diferentes, por isso preciso que vcs me informem qual serão as primeiras campanhas pra eu criar isso
+        <br/>
+        <a href="./campanhas/">Campanha exemplo</a> <br/>
+    </li>
+    <li>AREA DE CURSOS<br/>
+        A area de cursos também está separada, podemos até fazer um link dela para o APP, mas pra não misturar e deixar mais logico, criei a area de cursos separada da area do app<br/>
+        Segue uma sugestão de como pode ser, uma cópia do cara que tá dando certo hehehe
+        <br/>
+        <a href="./cursos/">Cursos</a> <br/>
+    </li>
+    <li>APP<br/>
+        O app vai conter a planilha funcional que eu ainda estou montando, por isso pode ser que esteja quebrado quando vcs virem isso
+        <br/>
+        <a href="./app/">App</a> <br/>
+    </li>
+    </ul>
+    
+
+    <div style="width: 300px;margin-left:auto;margin-right:auto; display: none;">
         <center><img src="img1.jpg" height="200"><br/><br/></center>
         <label>Usuario</label><br/>
         <input type="text"><br/><br/>
         <label>Senha</label><br/>
         <input type="password"><br/><br/><br/>
-        <center><button type="button" onclick="location.href='/app'">Entrar</button> </center>
+        <center><button type="button" onclick="location.href='./app'">Entrar</button> </center>
     </div>
 </body>
 </html>
