@@ -1,0 +1,57 @@
+x-tabs {
+  background: transparent;
+}
+
+x-tabs > ul {        
+  padding: 0px;
+  margin: 0px;
+  list-style: none;    
+  margin-bottom: -1px;    
+  text-align: left;   
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+x-tabs ul::-webkit-scrollbar { 
+  height: 0px;
+}
+
+
+x-tabs ul li {    
+  margin: 0px;
+  padding: 10px;    
+  padding-bottom: 0px;
+  display: inline-block;
+  cursor: pointer;
+  padding-bottom: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: var(--x-tabs-inactive-tab);      
+}
+
+x-tabs ul li[active] {  
+  cursor: pointer;
+  border: var(--x-tabs-border);
+  color: var(--x-tabs-active-tab);
+  border-bottom: 1px solid var(--x-default-background);
+  background: var(--x-default-background);
+  position: relative;
+  z-index: 1;
+}
+
+.x-tab__panels {
+  border-top: 1px solid gray;
+  overflow: auto;
+}
+
+.x-tab__scroll-button {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .x-tab__scroll-button {
+    display: block;
+    position: absolute;
+    z-index: 1;
+  }
+}

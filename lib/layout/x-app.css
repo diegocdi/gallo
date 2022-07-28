@@ -1,0 +1,66 @@
+/* Spacing for containers */
+spacing {
+    padding: 16px;
+    display: table;
+    width: 100%;
+}
+
+/* x-app container - grid instructions to our parent grid container, mobile-first (hide the x-nav) */
+x-app {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+        'x-header'
+        'main';
+    height: 100vh;    
+}
+
+/* x-app x-header - Give every child element its grid name */
+x-app x-header {
+  grid-area: x-header;
+  display: flex;  
+}
+
+/* x-app x-nav  */
+x-app x-nav {    
+  grid-area: x-nav;  
+  z-index: 999;  
+  height: 100%;
+  width: 240px;  
+  display: flex;
+  position: fixed;  
+  overflow-y: auto;
+  flex-direction: column;
+  transform: translateX(-245px);
+  transition: all .6s ease-in-out;  
+}
+
+/* x-app Main Content */
+x-app main {
+  grid-area: main;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding-top: 16px;
+}
+
+/* Non-mobile styles, 1000px breakpoint */
+@media only screen and (min-width: 1000px) {
+  /* Show the x-nav */
+  x-app {    
+    overflow: hidden;
+    grid-template-columns: 240px 1fr;
+    grid-template-areas:
+      "x-nav x-header"
+      "x-nav main"
+  }
+
+  x-app x-nav {
+    grid-area: x-nav;
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+    transform: none;
+  }
+}

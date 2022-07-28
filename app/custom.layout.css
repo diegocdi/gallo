@@ -1,0 +1,125 @@
+.menu-logo {
+  width: 100%;
+  background: #fff;  
+  height: 50px;    
+  box-shadow: -5px 2px 3px 2px rgba(0,0,0,0.15);
+  text-align: center;  
+  position: fixed;
+  top:0px;
+  z-index: 1;
+  width: 240px;  
+}
+
+.menu-logo img {
+  width: 50px;
+  height: 40px;  
+  margin-top: 5px;
+}
+
+.menu-lateral {
+  background: #fff;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.15);
+  width: 97%;
+  margin-top: 50px;
+}
+
+.menu-usuario {
+  padding: 10px;
+  text-align: center;
+}
+
+.menu-usuario-nome {
+  font-weight: bold;
+}
+
+.menu-usuario-acesso {
+  font-weight: thin;
+  font-size: 12px;
+  padding:5px;
+}
+
+.box-content {  
+  width: 96%;
+  padding: 16px;
+  margin-top:10px;
+  margin-left: auto;
+  margin-right: auto;    
+  background: #fff;  
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px 5px rgba(0,0,0,0.15);
+  height: calc(100% - 50px);
+}
+
+.box-content-modal {
+  padding: 20px;
+  background: var(--x-default-background);
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px 5px rgba(0,0,0,0.15);  
+}
+
+.box-content-modal .title-header {
+  width: 100%;
+  padding-bottom: 26px;
+}
+
+.box-content-modal .title-header .title {
+  width: 80%;
+  display: inline-block;
+  white-space: nowrap;  
+  text-overflow: ellipsis;
+  font-size: 28px;
+  font-weight: 200;
+}
+
+.box-content-modal .title-header .close-button {
+  width: 10%;
+  text-align: right;
+  cursor: pointer;
+  font-size: 20px;
+  color: rgba(0,0,0,.5);    
+  float: right;
+}
+
+.rodape-principal { 
+  position: absolute; 
+  width: 100%;bottom: 0px;
+  color:var(--x-input-label-color);
+  text-align: center;
+  font-size: 10px;
+  padding: 16px;
+}
+
+@media only screen and (max-width: 1000px) {  
+  .menu-logo { display: none;}
+  .menu-lateral { margin-top: 0px;}    
+}
+
+@media only screen and (max-width: 600px) {
+  .box-content {  
+    width: 100%;
+    padding: 16px;
+    margin-top: -25px;    
+    border-radius: 0px;
+    height: calc(100% + 25px);
+  }
+
+  .rodape-principal { 
+    display: none;
+  }
+
+  .barra-pesquisa {
+    top:0px;
+    position: sticky;
+    z-index: 1;
+    box-shadow: 2px 2px 1px 0px silver; 
+  }
+}
+
+
+.barra-pesquisa {
+  height: 50px;
+  background: var(--x-default-background);
+  text-align: center;
+  padding: 10px;  
+}

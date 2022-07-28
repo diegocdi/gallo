@@ -1,0 +1,47 @@
+table[is="x-data-grid"] {  
+  margin:0px;
+  padding: 0px;
+  border-spacing: 0px;
+  border-collapse: collapse;
+  font-size: 14px;
+  width: 100%;
+}
+
+table[is="x-data-grid"] thead th {  
+  top:0;  
+  position: sticky;
+  background: var(--x-default-background);
+}
+
+table[is="x-data-grid"] thead tr:last-child th{
+  box-shadow: 2px 2px 1px 0px silver;  
+} 
+
+table[is="x-data-grid"] tr td, table[is="x-data-grid"] tr th {
+  text-align: center;
+  padding: 4px;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+table[is="x-data-grid"] tr td {
+  text-align: left;
+}
+
+table[is="x-data-grid"] tbody tr:first-child {
+  display: none;
+}
+
+table[is="x-data-grid"] tbody tr:nth-child(even) {
+  background: var(--x-background-even);
+  border-bottom: 1px solid #E9DFE1;
+}
+
+table[is="x-data-grid"] tbody tr:nth-child(odd) {
+  background: var(--x-background-odd);
+  border-bottom: 1px solid #E9DFE1;
+}
+
+table[is="x-data-grid"] tbody i {
+  font-size: 20px;
+}

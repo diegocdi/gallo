@@ -1,0 +1,130 @@
+/**
+* Theming and colors
+*/
+:root {
+  /*default colors*/
+  --x-text-color: #202020;
+  --x-default-background: #ede9ea;
+
+  --x-primary: #5fb1c0;
+  --x-primary-hover: #57909b;
+  --x-primary-hover-text-color: #fff;
+
+  --x-success: #2ecc71;
+  --x-success-hover: #27ae60;
+  --x-warning: #f1c40f;
+  --x-warning-hover: #f39c12;
+  --x-error: #e74c3c;
+  --x-error-hover: #c0392b;
+  --x-info: #17a2b8;
+  --x-info-hover: #138496;
+
+  /*use for any zebra background*/
+  --x-background-odd: #F8F7F7;
+  --x-background-even: #fff;
+
+
+  /*header actions*/
+  --x-header-background: #fff;
+  --x-header-text-color: #202020;
+  /*side-nav actions*/
+  --x-nav-background: rgb(255, 255, 255);
+  --x-nav-text-color: rgba(59, 68, 75, 0.9);
+  --x-nav-text-hover: #fff;
+  --x-nav-item-hover: rgb(94, 5, 5);
+  --x-nav-item-active: #70450d;
+
+  /*x-progress-bar*/
+  --x-progress-bar-foreground : #B09A9F;
+  --x-progress-bar-background : #FBFAFB;
+  --x-progress-bar-border: 1px inset #B09A9F;
+
+  /*x-tabs*/
+  --x-tabs-border: 1px solid #B09A9F;
+  --x-tabs-inactive-tab:#B09A9F;
+  --x-tabs-active-tab: #554242;
+
+  /*x-input*/
+  --x-input-background: #e0dcdd;
+  --x-input-label-color: #554242;
+  --x-input-label-error-color: var(--x-error);
+  --x-input-button-color: #554242;  
+}
+
+/* scrollbar */
+::-webkit-scrollbar-track { 
+  background-color: transparent;   
+}
+::-webkit-scrollbar {   
+  background-color: transparent; 
+  height: 2px;
+  width: 2px; 
+}
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 0px transparent; 
+  box-shadow: inset 0 0 0px transparent; 
+  background-color: #B09A9F; 
+}
+
+/* placeholder (change default placeholder inputs x-appearance */
+::placeholder { font-size: 14px; font-weight: 200; color: gray; }
+
+
+/**
+* Html defaults
+*/
+* {
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: var(--x-text-color);
+}
+html, body {
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16px;  
+  overflow: hidden;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  color: var(--x-text-color);
+  background: var(--x-default-background);
+}
+h1, h2, h3 {
+  color: var(--x-primary);
+}
+
+/**
+* Aux styles
+**/
+.primary {
+    color: var(--x-primary);
+}
+
+.x-layout-scroll-container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  height: 98%;
+  padding: 0px;
+  margin: 0px;
+}
+
+[visible="false"] {
+  display:none;
+}
+
+
+
+@media (min-width: 1000px) {
+  .x-layout-small {
+    display: none;
+  }   
+}
+
+@media (max-width: 999px) {
+  .x-layout-large {
+    display: none;
+  }
+}

@@ -1,0 +1,46 @@
+x-modal {
+    top: 0;
+    left: 0;
+    border: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;        
+    visibility: hidden;    
+    background-color: rgba(0,0,0,.5);
+}
+
+x-modal[opened] {
+    visibility: visible;   
+}
+
+x-modal x-modal-content {
+    width: 90%;
+    height: 90%;    
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 5px;
+    transform: scale(0);
+    transition: visibility .5s linear 0s,opacity .25s 0s,transform .25s;    
+}
+
+x-modal[opened] x-modal-content {
+    opacity: 1;    
+    transform: scale(1);
+    visibility: visible;
+}
+
+@media only screen and (max-width: 600px) {
+  x-modal x-modal-content {
+    display: block;
+    position: absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right: 0px;
+  }
+}

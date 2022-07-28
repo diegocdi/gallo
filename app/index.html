@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="description" content="Gallo na Cozinha">
+    <title>Gallo na Cozinha</title>
+    <!-- PWA - INICIO -->
+    <link rel="shortcut icon"   href="/favicon.ico" type="image/x-icon">
+    <!-- <link rel="manifest"        href="/manifest.json">     -->
+    <!-- FIM - PWA -->
+    
+    <!-- Biblioteca de terceios - INICIO -->
+    <link href="../lib/thirdpart/fontawesome-free-5.12.1-web/css/all.min.css" rel="stylesheet">
+    <!-- FIM - Biblioteca de terceios -->
+
+    <!-- --------------------------------------
+      Biblioteca VANILLAJS - INICIO 
+      ----------------------------------------- -->
+
+    <!-- CONFIGURAÇÕES
+      -- CSS com cores e temas
+      -- JS com o objeto $CONFIG para configurações que armazena todas as configurações 
+         para não ficarem perdidas em variáveis globais -->    
+    <link href="../lib/config/config.css" rel="stylesheet">
+    <script src="../lib/config/config.js" defer></script> 
+
+    <!-- COMPONENTES BASE NÃO VISUAIS 
+      -- Prototypes para melhorias dos objetos JS
+      -- Toast - responsável automatização das mensagens para o usuário
+      -- Http - classe para comunicação com servidor via fecth api
+      -- BaseClass - classe base de onde serão extendidas as classes de telas
+         Ex.: Entidade extends BaseClass
+      -- PageLoader - responsável por carregar páginas html e suas dependências
+    -->
+    <script src="../lib/base/x-utils.js" defer></script>
+    <script src="../lib/base/protos.js" defer></script>
+    <script src="../lib/base/toast.js" defer></script>
+    <script src="../lib/base/loader.js" defer></script>
+    <script src="../lib/base/http.js" defer></script>
+    <script src="../lib/base/base-class.js" defer></script>
+    <script src="../lib/base/page-loader.js" defer></script>
+    <link href="../lib/base/loader.css" rel="stylesheet">
+
+    <!-- COMPONENTES DE LAYOUT 
+      -- X-APP - Responsável pelo controle SPA e disposição do layout (SideBar, Header, MainContent)
+      -- X-NAV - Responsável pelo controle do menu lateral (mobile-first)
+      -- X-HEADER / X-ACTIONBAR - Trabalham em conjunto para criar uma barra de ações
+    -->    
+    <link href="../lib/layout/x-grid-col.css" rel="stylesheet">
+    <link href="../lib/layout/x-app.css" rel="stylesheet">
+    <script src="../lib/layout/x-app.js" defer></script>  
+    <link href="../lib/layout/x-nav.css" rel="stylesheet"> 
+    <script src="../lib/layout/x-nav.js" defer></script>    
+    <link href="../lib/layout/x-header.css" rel="stylesheet">
+    <script src="../lib/layout/x-actionbar.js" defer></script>
+    <script src="../lib/layout/x-content-loader.js" defer></script>
+    <link href="../lib/layout/x-modal.css" rel="stylesheet">    
+    <script src="../lib/layout/x-modal.js" defer></script>
+    <link href="../lib/layout/x-tabs.css" rel="stylesheet">
+    <script src="../lib/layout/x-tabs.js" defer></script>
+    
+
+    
+    
+    <!-- COMPONENTES VISUAIS I/O - CONTROLS -->
+    <!-- x-button - botão bombado =D -->
+    <link href="../lib/controls/x-button.css" rel="stylesheet">
+    <script src="../lib/controls/x-button.js" defer></script>
+    <!-- x-dropdown - menu de contexto -->
+    <link href="../lib/controls/x-dropdown.css" rel="stylesheet">
+    <script src="../lib/controls/x-dropdown.js" defer></script>
+    <!-- x-checkbox - checkbox baseado no fontawsame -->
+    <link href="../lib/controls/x-checkbox.css" rel="stylesheet">
+    <script src="../lib/controls/x-checkbox.js" defer></script>
+    <!-- XInput -->
+    <link href="../lib/inputs/x-input.css" rel="stylesheet">
+    <script src="../lib/inputs/x-input.js" defer></script>
+    <script src="../lib/inputs/x-input-number.js" defer></script>
+    <script src="../lib/inputs/x-input-cnpj.js" defer></script>    
+    <script src="../lib/inputs/x-input-cep.js" defer></script>    
+    <link href="../lib/inputs/x-input-autocomplete.css" rel="stylesheet">
+    <script src="../lib/inputs/x-input-autocomplete.js" defer></script>    
+  
+    <!-- x-img-avatar - Cria uma imagem avatar igual a do GMAIL -->
+    <script src="../lib/controls/x-img-avatar.js" defer></script>
+    <!-- ProgressBar-->
+    <script src="../lib/controls/x-progress-bar.js" defer></script>    
+
+    <!-- COMPONENTES PARA MANIPULAÇÃO DE DADOS -->
+    <!-- X-FORM -->
+    <link href="../lib/data/x-form.css" rel="stylesheet">
+    <script src="../lib/data/x-form.js" defer></script>    
+    <!-- x-data-grid -->
+    <link href="../lib/data/x-data-grid.css" rel="stylesheet">
+    <script src="../lib/data/x-data-grid.js" defer></script>    
+
+
+    <!-- --------------------------------------
+      FINAL DA Biblioteca VANILLAJS - FIM
+      ----------------------------------------- -->
+
+
+    <!-- --------------------------------------
+    DAQUI PRA BAIXO SÃO CUSTOMIZAÇÕES ESPEC´´IFICAS DE APP PARA APP
+    ----------------------------------------- -->
+    <!--- Custom Layouts -->
+    <link rel="stylesheet"      href="/css/custom.layout.css">
+</head> 
+<body>
+  <x-app>
+    <x-header><a href="javascript:document.querySelector('x-nav').setAttribute('opened','true')"><i class="fas fa-bars"></i></a></x-header>
+
+    <x-nav> 
+        <div style="background:#fff;width:100%;text-align: center; height: 50px;"><img src="/img1.jpg" height="50px" width="50px"></div>
+        <ul>
+          <li><a href="#!/app/dashboard"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="#!/app/insumos"><i class="fas fa-copy"></i> Insumos</a></li>
+          <li><a href="#!/dashboard"><i class="fas fa-chart-bar"></i> Produtos</a></li>
+          <li><a href="#!/dashboard"><i class="fas fa-chart-line"></i> Ficha Técnica</a></li>
+          <li><a href="#!/dashboard" style="border-bottom-right-radius: 10px;"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+        </ul>
+    </x-nav>
+
+    <main>
+      <!-- Pages will be loaded here -->
+    </main>
+  </x-app>
+</body>
+</html>

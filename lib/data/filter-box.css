@@ -1,0 +1,54 @@
+div[is="filter-box"] {
+    height: 50px;
+    width: 100%;
+    background: var(--x-light-silver);
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content:center;
+    flex-direction:column;
+    border-bottom: 1px solid var(--x-dark-silver);
+    padding-left:16px;
+    padding-right:16px;
+}
+
+div[is="filter-box"] div {
+    width: 100%;
+    max-width: 500px;
+}
+
+div[is="filter-box"] div span {
+    border-radius: 5px;
+    padding: 6px;
+    border: 0px;
+    background: #fff;
+    border: 1px solid silver;
+}
+
+div[is="filter-box"] div span i.search-ico {
+    color: gray;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+div[is="filter-box"] div i.search-filter-button {
+    font-size: 28px;
+    margin-left: 16px;
+    line-height: 10px;
+    position: relative;
+    top: 5px;
+}
+div[is="filter-box"] div i.search-filter-button[active-filter] {
+    color: var(--x-primary);
+}
+
+    div[is="filter-box"] input {
+        border: 0px;
+        width: calc(100% - 100px);
+        outline: none;
+    }
+
+/*<i class="fas fa-list-alt" style="font-size:28px;margin-left:16px;line-height:10px;position:relative;top:5px; color:var(--x-primary)"></i>*/

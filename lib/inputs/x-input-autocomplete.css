@@ -1,0 +1,31 @@
+.x-input__autocomplete-list {
+    list-style: none;
+    cursor: pointer;
+    padding: 0px;
+    padding-top: 5px;
+    margin: 0px;
+    margin-left: -5px;
+    margin-top: -2px;    
+    position: absolute;
+    z-index: 99;    
+    overflow-y: scroll;
+    overflow-x: hidden;        
+    height: auto;    
+    max-height: 300px;        
+    background: var(--x-input-background);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.15); 
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.x-input__autocomplete-list li {
+    padding: 10px;
+    color: #333;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.x-input__autocomplete-list li:hover, .x-input__autocomplete-list > li[active] {
+    color: var(--x-primary-hover-text-color);
+    background: var(--x-primary);
+}

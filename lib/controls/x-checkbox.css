@@ -1,0 +1,11 @@
+input[is="x-checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  color: gray;  
+}
+
+input[type="checkbox"]:checked + label {
+  color: var(--x-primary);
+}

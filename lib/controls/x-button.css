@@ -1,0 +1,378 @@
+/*Default button*/
+button {
+    cursor: pointer;
+    outline: none;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #333;
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    background-position: center;
+    transition: background 0.5s;
+}
+
+button:hover {
+    background: var(--x-dark-silver) radial-gradient(circle, transparent 1%, var(--x-dark-silver) 1%) center/15000%;
+}
+
+button[disabled], button[disabled]:hover {
+    cursor: not-allowed;
+    background: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    color:rgba(0,0,0,.5);
+}
+
+button:active[disabled]:after {
+    transform: scale(10, 10);
+    opacity: 0;
+}
+
+button i {
+    margin-right: 5px;
+}
+
+/*primary*/
+button.primary {
+    background: var(--x-primary);
+    border: 1px solid var(--x-primary-hover);
+    color:#fff;
+}
+
+button.primary:hover {
+    background:var(--x-primary-hover) radial-gradient(circle, transparent 1%, var(--x-primary-hover) 1%) center/15000%;   
+    border: 1px solid var(--x-primary-hover);
+}
+
+button.primary[disabled], button.primary[disabled]:hover {
+    background: var(--x-primary);
+    border: 1px solid var(--x-primary);
+    color: rgba(255,255,255,.7);
+}
+
+/*sucess*/
+button.success {
+    background: var(--x-success);
+    border: 1px solid var(--x-success-hover);
+    color: #fff;
+}
+
+button.success:hover {
+    background: var(--x-success-hover) radial-gradient(circle, transparent 1%, var(--x-success-hover) 1%) center/15000%;
+    border: 1px solid var(--x-success-hover);
+}
+
+button.success[disabled], button.success[disabled]:hover {
+    cursor: not-allowed;
+    background: var(--x-success);
+    border: 1px solid var(--x-success);
+    color: rgba(255,255,255,.7);
+}
+
+/* Error */
+button.error {
+    background: var(--x-error);
+    border: 1px solid var(--x-error-hover);
+    color: #fff;
+}
+
+button.error:hover {
+    background: var(--x-error-hover) radial-gradient(circle, transparent 1%, var(--x-error-hover) 1%) center/15000%;
+    border: 1px solid var(--x-error-hover);
+}
+
+button.error[disabled], button.error[disabled]:hover {
+    cursor: not-allowed;
+    background: var(--x-error);
+    border: 1px solid var(--x-error);
+    color: rgba(255,255,255,.7);
+}
+
+/*warnig*/
+button.warning {
+    background: var(--x-warning);
+    border: 1px solid var(--x-warning-hover);
+    color: #fff;
+}
+
+button.warning:hover {
+    background: var(--x-warning-hover) radial-gradient(circle, transparent 1%, var(--x-warning-hover) 1%) center/15000%;
+    border: 1px solid var(--x-warning-hover);
+}
+
+button.warning[disabled], button.warning[disabled]:hover {
+    cursor: not-allowed;
+    background: var(--x-warning);
+    border: 1px solid var(--x-warning);
+    color: rgba(255,255,255,.7);
+}
+
+/*Ripple effect*/
+button:active, button.primary:active, button.success:active, button.error:active, button.warning:active {
+    background-color: #fff;
+    background-size: 100%;
+    transition: background 0s;
+}
+
+/* circle */
+button.circle {
+    color:rgba(59, 68, 75, 0.8);
+    background: transparent;
+    margin-top: 0px;
+    padding: 0px;
+    border: 0px;
+    width: 40px;
+    text-align: center;    
+}
+
+button.circle i {
+    margin: 0px;
+    font-size: 24px;
+    line-height: 16px;
+    /* position:relative; */
+    top: 2px;
+}
+
+button.circle:hover {
+    color: #000;
+}
+
+/*Input button*/
+button.input-button {
+    color: var(--x-label-color);
+    background: transparent;
+    text-align: center;
+    padding: 0px;
+    border: 0px;
+    width: 30px;        
+    margin: 0px;
+    position:relative;
+    top:-2px;
+}
+
+button.input-button:hover {
+    background: transparent;
+    color:var(--x-primary-hover);
+}
+
+button.input-button i {
+    margin: 0px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    font-size: 18px;
+}
+
+/*mobile*/
+@media (max-width: 1000px) {
+    button.mobile {
+        color: #333;
+        background: transparent !important;
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        width: 40px;
+        text-align: center;
+    }
+
+    button.mobile:hover {
+        color: #000;
+        background: transparent !important;
+        border: 0px;
+    }
+
+    button.mobile i {
+        margin: 0px;
+        font-size: 24px;
+        padding-top: 5px;
+    }
+
+    button.mobile span {
+        display: none;
+    }
+
+    button.circle i {
+        position: relative;
+        top: 0px;
+    }
+}
+
+
+
+
+
+/* 
+  You want a simple and fancy tooltip?
+  Just copy all [tooltip] blocks:
+*/
+[tooltip] {
+    position: relative;
+    z-index: 10;
+}
+
+/* Positioning and visibility settings of the tooltip */
+[tooltip]:before,
+[tooltip]:after {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: 50%;
+    bottom: calc(100% + 5px);
+    pointer-events: none;
+    transition: 0.2s;
+    will-change: transform;
+}
+
+/* The actual tooltip with a dynamic width */
+[tooltip]:before {
+    content: attr(tooltip);
+    padding: 10px 18px;
+    min-width: 50px;
+    max-width: 300px;
+    width: max-content;
+    width: -moz-max-content;
+    border-radius: 6px;
+    font-size: 14px;
+    /*   font-size: 0.73rem; */
+    background-color: rgba(59, 72, 80, 0.9);
+    background-image: linear-gradient(30deg, rgba(59, 72, 80, 0.44), rgba(59, 68, 75, 0.44), rgba(60, 82, 88, 0.44));
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+    white-space: pre-wrap;
+    transform: translate(-50%, -5px) scale(0.5);
+}
+
+/* Tooltip arrow */
+[tooltip]:after {
+    content: '';
+    border-style: solid;
+    border-width: 5px 5px 0px 5px;
+    border-color: rgba(55, 64, 70, 0.9) transparent transparent transparent;
+    transition-duration: 0s; /* If the mouse leaves the element, 
+                            the transition effects for the 
+                            tooltip arrow are "turned off" */
+    transform-origin: top; /* Orientation setting for the
+                            slide-down effect */
+    transform: translateX(-50%) scaleY(0);
+}
+
+/* Tooltip becomes visible at hover */
+[tooltip]:hover:before,
+[tooltip]:hover:after {
+    visibility: visible;
+    opacity: 1;
+}
+/* Scales from 0.5 to 1 -> grow effect */
+[tooltip]:hover:before {
+    transition-delay: 0.3s;
+    transform: translate(-50%, -5px) scale(1);
+}
+/* Slide down effect only on mouseenter (NOT on mouseleave) */
+[tooltip]:hover:after {
+    transition-delay: 0.5s; /* Starting after the grow effect */
+    transition-duration: 0.2s;
+    transform: translateX(-50%) scaleY(1);
+}
+/*
+  That's it.
+*/
+
+
+
+
+
+
+/*
+  If you want some adjustability
+  here are some orientation settings you can use:
+*/
+
+/* LEFT */
+/* Tooltip + arrow */
+[tooltip-position="left"]:before,
+[tooltip-position="left"]:after {
+    left: auto;
+    right: calc(100% + 5px);
+    bottom: 50%;
+}
+
+/* Tooltip */
+[tooltip-position="left"]:before {
+    transform: translate(-5px, 50%) scale(0.5);
+}
+
+[tooltip-position="left"]:hover:before {
+    transform: translate(-5px, 50%) scale(1);
+}
+
+/* Arrow */
+[tooltip-position="left"]:after {
+    border-width: 5px 0px 5px 5px;
+    border-color: transparent transparent transparent rgba(55, 64, 70, 0.9);
+    transform-origin: left;
+    transform: translateY(50%) scaleX(0);
+}
+
+[tooltip-position="left"]:hover:after {
+    transform: translateY(50%) scaleX(1);
+}
+
+
+
+/* RIGHT */
+[tooltip-position="right"]:before,
+[tooltip-position="right"]:after {
+    left: calc(100% + 5px);
+    bottom: 50%;
+}
+
+[tooltip-position="right"]:before {
+    transform: translate(5px, 50%) scale(0.5);
+}
+
+[tooltip-position="right"]:hover:before {
+    transform: translate(5px, 50%) scale(1);
+}
+
+[tooltip-position="right"]:after {
+    border-width: 5px 5px 5px 0px;
+    border-color: transparent rgba(55, 64, 70, 0.9) transparent transparent;
+    transform-origin: right;
+    transform: translateY(50%) scaleX(0);
+}
+
+[tooltip-position="right"]:hover:after {
+    transform: translateY(50%) scaleX(1);
+}
+
+
+
+/* BOTTOM */
+[tooltip-position="bottom"]:before,
+[tooltip-position="bottom"]:after {
+    top: calc(100% + 5px);
+    bottom: auto;
+}
+
+[tooltip-position="bottom"]:before {
+    transform: translate(-50%, 5px) scale(0.5);
+}
+
+[tooltip-position="bottom"]:hover:before {
+    transform: translate(-50%, 5px) scale(1);
+}
+
+[tooltip-position="bottom"]:after {
+    border-width: 0px 5px 5px 5px;
+    border-color: transparent transparent rgba(55, 64, 70, 0.9) transparent;
+    transform-origin: bottom;
+}
+
+@media (min-width: 1000px) {
+    [tooltip-mobile-only]:hover:before,
+    [tooltip-mobile-only]:hover:after {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
